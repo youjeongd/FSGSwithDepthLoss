@@ -1,0 +1,18 @@
+#!/usr/bin/bash
+
+#SBATCH -J 0930
+#SBATCH --gres=gpu:1
+#SBATCH --cpus-per-gpu=8
+#SBATCH --mem-per-gpu=32G
+#SBATCH -p batch_ugrad
+#SBATCH -w aurora-g8
+#SBATCH -t 0-4
+#SBATCH -o logs/slurm-%A.out 
+
+pwd
+which python
+ython train.py --source_path /local_datasets/dataset/nerf_llff_data/trex --model_path ./output/trex --n_views 3 --iteration 2000 --sample_pseudo_interval 1 
+python metrics.py -m output/trex
+
+exit 0
+

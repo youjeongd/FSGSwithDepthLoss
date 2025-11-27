@@ -1,0 +1,1 @@
+Namespace(data_device='cuda', eval=False, images='images_8', model_path='./output/horns', n_views=3, resolution=-1, sh_degree=3, source_path='/local_datasets/dataset/nerf_llff_data/horns/horns', white_background=False)
