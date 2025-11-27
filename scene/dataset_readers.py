@@ -273,7 +273,7 @@ def storePly(path, xyz, rgb):
 def readColmapSceneInfo(path, images, eval, n_views=0, llffhold=8):
     # ply_path = os.path.join(path, "sparse/0/points3D.ply")
     # bin_path = os.path.join(path, "sparse/0/points3D.bin")
-    ply_path = os.path.join(path, str(n_views) + "_views/dense/fused.ply")
+    ply_path = os.path.join(path, str(n_views) + "/dense/fused.ply")
 
     try:
         cameras_intrinsic_file = os.path.join(path, "sparse/0", "cameras.bin")
@@ -401,7 +401,7 @@ def readNerfSyntheticInfo(path, white_background, eval, n_views=0, extension=".p
 
     nerf_normalization = getNerfppNorm(train_cam_infos)
 
-    ply_path = os.path.join(path, str(n_views) + "_views/dense/fused.ply")
+    ply_path = os.path.join(path, str(n_views) + "/dense/fused.ply")
 
     # if not os.path.exists(ply_path):
     #     # Since this data set has no colmap data, we start with random points
