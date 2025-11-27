@@ -464,9 +464,7 @@ if __name__ == "__main__":
     parser.add_argument("--checkpoint_iterations", nargs="+", type=int, default=[50_00, 10_000])
     parser.add_argument("--start_checkpoint", type=str, default = None)
     parser.add_argument("--train_bg", action="store_true")
-    parser.add_argument("--use_confidence", action="store_true", default=False,
-                        help="Use confidence-weighted loss. Can use --confidence_dir for pre-computed maps "
-                             "or compute at runtime if --confidence_dir is not specified.")
+    # Note: --use_confidence is already defined in PipelineParams (arguments/__init__.py)
     parser.add_argument("--confidence_dir", type=str, default=None,
                         help="Directory containing uncertainty/confidence maps from generate_maps.py "
                              "(e.g., opt.output_dir/raw/uncert/). If None, confidence maps are computed at runtime.")
