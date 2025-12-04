@@ -303,6 +303,8 @@ def readColmapSceneInfo(path, images, eval, n_views=0, llffhold=8):
                              images_folder=os.path.join(path, reading_dir),  path=path, rgb_mapping=rgb_mapping)
     cam_infos = sorted(cam_infos_unsorted.copy(), key = lambda x : x.image_name)
 
+    print ("eval:", eval)
+
     if eval:
         train_cam_infos = [c for idx, c in enumerate(cam_infos) if idx % llffhold != 0]
         test_cam_infos = [c for idx, c in enumerate(cam_infos) if idx % llffhold == 0]
